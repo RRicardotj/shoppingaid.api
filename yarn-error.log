@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/ricardorodriguez/.nvm/versions/node/v8.11.4/bin/node /Users/ricardorodriguez/.nvm/versions/node/v8.11.4/bin/yarn add express bcryptjs body-parser jasonwebtoken dotenv
+
+PATH: 
+  /Users/ricardorodriguez/.nvm/versions/node/v8.11.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ricardorodriguez/anaconda3/bin:/Users/ricardorodriguez/anaconda3/condabin:/Users/ricardorodriguez/Library/Android/sdk/emulator:/Users/ricardorodriguez/Library/Android/sdk/tools:/Users/ricardorodriguez/Library/Android/sdk/tools/bin:/Users/ricardorodriguez/Library/Android/sdk/platform-tools:/Users/ricardorodriguez/Library/Android/sdk/emulator:/Users/ricardorodriguez/Library/Android/sdk/tools:/Users/ricardorodriguez/Library/Android/sdk/tools/bin:/Users/ricardorodriguez/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  8.11.4
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/jasonwebtoken: Not found
+      at Request.params.callback [as _callback] (/Users/ricardorodriguez/.nvm/versions/node/v8.11.4/lib/node_modules/yarn/lib/cli.js:66255:18)
+      at Request.self.callback (/Users/ricardorodriguez/.nvm/versions/node/v8.11.4/lib/node_modules/yarn/lib/cli.js:129397:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/Users/ricardorodriguez/.nvm/versions/node/v8.11.4/lib/node_modules/yarn/lib/cli.js:130369:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/Users/ricardorodriguez/.nvm/versions/node/v8.11.4/lib/node_modules/yarn/lib/cli.js:130291:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "shoppingaid.api",
+    "version": "1.0.0",
+    "description": "Api for shopping aid app",
+    "main": "index.js",
+    "author": "RRicardotj",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
