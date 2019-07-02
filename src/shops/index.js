@@ -4,16 +4,16 @@ const withCatchAsync = require('../utils/catchAsyncErrors');
 
 const {
   createHandler,
-  shopHandler,
+  listShopHandler,
   showHandler,
   deleteHandler,
   addArticleHandler,
 } = require('./handler');
 
 router.post('/', withCatchAsync(createHandler));
-router.get('/', withCatchAsync(shopHandler));
-router.get('/:id(\\d+)', withCatchAsync(showHandler));
-router.delete('/:id(d\\+)', withCatchAsync(deleteHandler));
-router.put('/:id(d\\+)', withCatchAsync(addArticleHandler));
+router.get('/', withCatchAsync(listShopHandler));
+router.get('/:id', withCatchAsync(showHandler));
+router.delete('/:id', withCatchAsync(deleteHandler));
+router.put('/:id', withCatchAsync(addArticleHandler));
 
 module.exports = router;
