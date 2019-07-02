@@ -45,12 +45,9 @@ module.exports = {
     const client = new MongoClient(uri, { useNewUrlParser: true });
     const { id } = req.params;
 
-    await client.close();
     await client.connect();
 
     const collection = await client.db('shoppingaid').collection('shops');
-
-    console.log(id);
 
     const shop = await collection.findOne({ _id: new ObjectID(id) });
     
@@ -62,9 +59,31 @@ module.exports = {
     return res.json(shop);
   },
   deleteHandler: async (req, res) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true });
+    const { id } = req.params;
 
+    await client.connect();
+
+    const collection = await client.db('shoppingaid').collection('shops');
+
+    const shop = await collection.findOne({ _id: new ObjectID(id) });
+    
+    if (!shop) {
+      throw new ShopError('La compra no fué encontrada');
+    }
+
+    await collection.deleteOne({ _id: new ObjectID(id) });
+
+    await client.close();
+    return res.json({ id });
   },
   addArticleHandler: async (req, res) => {
 
+  },
+  updateArticleHandler: async (req, res) => {
+    // move to articles folder
+  },
+  deleteArticleHandler: async (req, res) => {
+    // move to articles folder
   },
 };
