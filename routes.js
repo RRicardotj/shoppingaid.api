@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/shops', require('./src/shops'));
+router.use('/articles', require('./src/articles'));
 
 router.use((err, req, res, next) => { // eslint-disable-line
   res.handleReject(err);

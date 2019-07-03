@@ -77,13 +77,4 @@ module.exports = {
     await client.close();
     return res.json({ id });
   },
-  addArticleHandler: async (req, res) => {
-
-  },
-  updateArticleHandler: async (req, res) => {
-    // move to articles folder
-  },
-  deleteArticleHandler: async (req, res) => {
-    // move to articles folder
-  },
 };
