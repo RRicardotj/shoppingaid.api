@@ -77,11 +77,36 @@ module.exports = {
       return item;
     });
 
-    console.log(articles);
+    await collection.updateOne({ _id: new ObjectID(shopId) }, { $set: { articles } });
+    
+    return res.json({ articles });
+  },
+  removeHandler: async (req, res) => {
+    const { shopId } = req.body;
+    const { id } = req.params;
+
+    if (!shopId) {
+      throw new ShopError('shopId es requerido.');
+    }
+
+    const client = new MongoClient(uri, { useNewUrlParser: true });
+
+    await client.connect();
+
+    const collection = await client.db('shoppingaid').collection('shops');
+    console.log(shopId);
+
+    const shop = await collection.findOne({ _id: new ObjectID(shopId) });
+    
+    if (!shop) {
+      throw new ShopError('La compra no fué encontrada');
+    }
+    let { articles } = shop;
+    if (!articles || articles.length === 0) { throw new ShopError('La compra no tiene artículos'); }
+    articles = articles.filter((item) => (item.idItem !== id));
 
     await collection.updateOne({ _id: new ObjectID(shopId) }, { $set: { articles } });
     
     return res.json({ articles });
   },
-  removeHandler: async (req, res) => {},
 };
